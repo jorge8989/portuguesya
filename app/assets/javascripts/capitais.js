@@ -6,11 +6,19 @@ var randest = ''
 var opciones = []
 var bem = 0
 var mal = 0
+var jugados = []
 function gpregunta() {
 var rne = Math.round(Math.random()*25);
 randest = estados[rne];
-document.getElementById("pregunta").innerHTML=randest;
 resposta = capitais[rne];
+for (randest = randest; jugados.indexOf(randest) > -1; rne = Math.round(Math.random()*25)) {
+randest = estados[rne];
+resposta = capitais[rne];
+}
+document.getElementById("pregunta").innerHTML=randest;
+jugados.push(randest);
+//alert(jugados);
+
 }
 function jugar() {
 document.getElementById("acertos").style.visibility="visible";
@@ -20,6 +28,20 @@ document.getElementById("errosp").innerHTML=mal
 document.getElementById("qual").style.visibility="visible";
 document.getElementById("boton").style.display="none";
 document.getElementById("ul").style.visibility="visible"
+if ((bem + mal) == 5){
+var acertou = (bem*100)/26;
+acertou = Math.round(acertou);
+alert("você acertou " + acertou + "%")
+document.getElementById("qual").style.visibility="hidden";
+document.getElementById("ul").style.visibility="hidden"
+document.getElementById("boton").style.display="inline";
+document.getElementById("muito").innerHTML=" "
+document.getElementById("res").style.visibility="hidden";
+document.getElementById("resposta").innerHTML=" "
+document.getElementById("ja").style.visibility="hidden";
+document.getElementById("boton").value="Jogar de novo"
+ }
+else {
 gpregunta();
 function generar(){
 var op1 = Math.round(Math.random()*25);
@@ -48,7 +70,8 @@ document.getElementById("op1").innerHTML=opciones[0]
 document.getElementById("op2").innerHTML=opciones[1]
 document.getElementById("op3").innerHTML=opciones[2]
 document.getElementById("op4").innerHTML=opciones[3]
-}
+} //fin del else 1
+} // fin de jugar
 function analizar(elemento) {
 resjugador = elemento.innerHTML;
 if (resjugador == resposta) {
