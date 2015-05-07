@@ -15,7 +15,7 @@ img {
 	text-align: center;
 	background: #fff;
 	width: 90%;
-	max-width: 1000px;
+	max-width: 800px;
 	margin: 20px auto;
 	height: 90%;
 	margin: auto;
@@ -23,6 +23,18 @@ img {
 	padding-top: 20px;
 	font-family: "Comic Sans MS", Arial, Helvetica, Sans-serif ;
 
+}
+footer {
+	font-size: 110%;
+	text-align: center;
+	background: #088A29;
+	width: 90%;
+	max-width: 800px;
+	margin: 20px auto;
+	font-family: "Comic Sans MS", Arial, Helvetica, Sans-serif ;
+	color: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 #acertosp {
 	color: #04B404;
@@ -35,12 +47,13 @@ img {
 	font-weight: normal;
 }
 #boton {
-	font-size: 20px;
+	font-size: 110%;
 	padding: 10px 20px;
 	background: #088A29;
 	border: none;
 	color: #fff;
 	font-family: "Comic Sans MS", Arial, Helvetica, Sans-serif ;
+	width: 30%;
 }
 #boton:hover {
 	background: #04B431;
@@ -65,4 +78,11 @@ div ul li {
 .li:hover {
 	background: #045FB4;
 	cursor: pointer;
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+a:hover {
+	text-decoration: underline;
 }
