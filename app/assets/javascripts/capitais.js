@@ -40,6 +40,13 @@ document.getElementById("res").style.visibility="hidden";
 document.getElementById("resposta").innerHTML=" "
 document.getElementById("ja").style.visibility="hidden";
 document.getElementById("boton").value="Jogar de novo"
+resposta = ''
+resjugador = ''
+randest = ''
+opciones = []
+bem = 0
+mal = 0
+jugados = []
  }
 else {
 gpregunta();
