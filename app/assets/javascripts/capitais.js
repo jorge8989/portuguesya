@@ -1,5 +1,5 @@
 var estados = ['do Rio grande do sul', 'de Santa Catarina', 'do Paraná', 'do São Paulo', 'do Rio de janeiro', 'do Espíritu santo', 'de Minas gerais', 'de Goias', 'do Mato grosso', 'do Mato Grosso do sul', 'de Rondônia', 'do Acre', 'de Amazonas', 'do Pará', 'de Roraima', 'de Amapá', 'de Tocantins', 'do Piauí', 'do Maranhão', 'do Ceará', 'do Rio grande do norte', 'da Paraiba', 'de Alagoas', 'de Pernambuco', 'de Sergipe', 'da Bahia']
-var capitais = ['Porto alegre', 'Florianópolis', 'Curitiba', 'São Paulo', 'Rio de janeiro', 'Vitória', 'Belo horizonte', 'Goiánia', 'Cuiabá', 'Campo grande', 'Porto velho', 'Rio branco', 'Manaus', 'Belem', 'Boa vista', 'Macapá', 'Palmas', 'Teresina', 'São Luis', 'Fortaleza', 'Natal', 'João Pessoa', 'Maceió', 'Recife', 'Aracaju', 'Salvador' ];
+var capitais = ['Porto alegre', 'Florianópolis', 'Curitiba', 'São Paulo', 'Rio de janeiro', 'Vitória', 'Belo horizonte', 'Goiánia', 'Cuiabá', 'Campo grande', 'Porto velho', 'Rio branco', 'Manaus', 'Belém', 'Boa vista', 'Macapá', 'Palmas', 'Teresina', 'São Luis', 'Fortaleza', 'Natal', 'João Pessoa', 'Maceió', 'Recife', 'Aracaju', 'Salvador' ];
 var resposta = ''
 var resjugador = ''
 var randest = ''
