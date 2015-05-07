@@ -28,7 +28,7 @@ document.getElementById("errosp").innerHTML=mal
 document.getElementById("qual").style.visibility="visible";
 document.getElementById("boton").style.display="none";
 document.getElementById("ul").style.visibility="visible"
-if ((bem + mal) == 5){
+if ((bem + mal) == 26){
 var acertou = (bem*100)/26;
 acertou = Math.round(acertou);
 alert("você acertou " + acertou + "%")
