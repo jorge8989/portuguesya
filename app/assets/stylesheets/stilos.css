@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #e6e6e6;
+}
+img {
+	width: 40%;
+	height: 40%;
+}
+#caja {
+	font-size: 110%;
+	text-align: center;
+	background: #fff;
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	height: 90%;
+	margin: auto;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	font-family: "Comic Sans MS", Arial, Helvetica, Sans-serif ;
+
+}
+#acertosp {
+	color: #04B404;
+}
+#errosp {
+	color: #B40404;
+}
+#qual, #res, #acertos, #ja, #erros {
+	visibility: hidden;
+	font-weight: normal;
+}
+#boton {
+	font-size: 20px;
+	padding: 10px 20px;
+	background: #088A29;
+	border: none;
+	color: #fff;
+	font-family: "Comic Sans MS", Arial, Helvetica, Sans-serif ;
+}
+#boton:hover {
+	background: #04B431;
+	cursor: pointer;
+}
+
+div ul {
+	list-style: none;
+}
+div ul li {
+	font-size: 110%;
+	padding: 10px 20px;
+	background: #0080FF;
+	width: 30%;
+	margin: 1% auto;
+	color: #fff;
+}
+
+#ul {
+	visibility: hidden;
+}
+.li:hover {
+	background: #045FB4;
+	cursor: pointer;
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">	
+<title>Capitais</title>
+</head>
+<body>
+<div id="caja">
+	<img src="/images/mapa.png">
+	<p id="ja"><span id="muito"></span><span id="res">(resposta : </span><span id="resposta"></span>!)</p>
+	<p><span id="acertos">Acertos: <span id="acertosp"></span></span><span id="erros"> Erros: <span id="errosp"></span></span></p>
+	<h3 id="qual">Qual é a capital do estado <span id="pregunta"></span> ?</h3>
+	<input type="button" id="boton" value ="Jogar" onClick="jugar()">
+	<ul id="ul"><li class="li" id="op1" onClick ="analizar(this)"></li>
+		<li class="li" id="op2" onClick ="analizar(this)"></li>
+		<li class="li" id="op3" onClick ="analizar(this)"></li>
+		<li class="li" id="op4" onClick ="analizar(this)"></li>
+	</ul>
+</div>
+</body>
+</html>
