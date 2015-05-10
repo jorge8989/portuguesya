@@ -51,7 +51,7 @@ document.getElementById("op4").innerHTML=opciones[3]
 function jugar(){
 document.getElementById("acertosp").innerHTML=bem
 document.getElementById("errosp").innerHTML=mal
-if ((bem + mal) == 3){
+if ((bem + mal) == 26){
 var acertou = (bem*100)/26;
 acertou = Math.round(acertou);
 alert("você acertou " + acertou + "%")
