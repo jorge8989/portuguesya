@@ -51,13 +51,14 @@ document.getElementById("op4").innerHTML=opciones[3]
 function jugar(){
 document.getElementById("acertosp").innerHTML=bem
 document.getElementById("errosp").innerHTML=mal
-if ((bem + mal) == 26){
+if ((bem + mal) == 3){
 var acertou = (bem*100)/26;
 acertou = Math.round(acertou);
 alert("você acertou " + acertou + "%")
 $("#qual, #ul, #res, #ja").hide();
 //$("#boton").attr("value", "Jogar de novo");
-$("#boton").slideDown();
+$("#boton").attr("value", "Jogar de novo");
+$("#boton").fadeIn(1000);
 document.getElementById("muito").innerHTML=" "
 document.getElementById("resposta").innerHTML=" "
 //document.getElementById("boton").value="Jogar de novo"
@@ -70,11 +71,11 @@ mal = 0
 jugados = []
  }
 else if ((bem + mal) == 0 ){
-$("#boton").slideUp(300, function(){
+$("#boton").slideUp(600, function(){
 $("#acertos, #erros, #qual").show();
 $("ul").hide();
 $("ul").css("visibility","visible");
-$("ul").slideDown(500);
+$("ul").slideDown(1000);
 });
 gpregunta();
 generar();
