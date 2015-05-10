@@ -43,7 +43,6 @@ footer {
 	color: #B40404;
 }
 #qual, #res, #acertos, #ja, #erros {
-	visibility: hidden;
 	font-weight: normal;
 }
 #boton {
@@ -54,6 +53,7 @@ footer {
 	color: #fff;
 	font-family: "Comic Sans MS", Arial, Helvetica, Sans-serif ;
 	width: 30%;
+	
 }
 #boton:hover {
 	background: #04B431;
@@ -71,9 +71,8 @@ div ul li {
 	margin: 1% auto;
 	color: #fff;
 }
-
 #ul {
-	visibility: hidden;
+visibility: hidden;
 }
 .li:hover {
 	background: #045FB4;

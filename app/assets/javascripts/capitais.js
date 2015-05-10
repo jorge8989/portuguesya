@@ -20,36 +20,6 @@ jugados.push(randest);
 //alert(jugados);
 
 }
-function jugar() {
-document.getElementById("acertos").style.visibility="visible";
-document.getElementById("acertosp").innerHTML=bem
-document.getElementById("erros").style.visibility="visible";
-document.getElementById("errosp").innerHTML=mal
-document.getElementById("qual").style.visibility="visible";
-document.getElementById("boton").style.display="none";
-document.getElementById("ul").style.visibility="visible"
-if ((bem + mal) == 26){
-var acertou = (bem*100)/26;
-acertou = Math.round(acertou);
-alert("você acertou " + acertou + "%")
-document.getElementById("qual").style.visibility="hidden";
-document.getElementById("ul").style.visibility="hidden"
-document.getElementById("boton").style.display="inline";
-document.getElementById("muito").innerHTML=" "
-document.getElementById("res").style.visibility="hidden";
-document.getElementById("resposta").innerHTML=" "
-document.getElementById("ja").style.visibility="hidden";
-document.getElementById("boton").value="Jogar de novo"
-resposta = ''
-resjugador = ''
-randest = ''
-opciones = []
-bem = 0
-mal = 0
-jugados = []
- }
-else {
-gpregunta();
 function generar(){
 var op1 = Math.round(Math.random()*25);
 var op2 = Math.round(Math.random()*25);
@@ -68,7 +38,7 @@ op4 = op4
 opciones = []
 opciones.push(capitais[op1], capitais[op2], capitais[op3], capitais[op4]);
 }
-generar();
+function generar2() {
 if ((opciones.indexOf(resposta)) < 0) {
 var rno = Math.round(Math.random()*3);
 opciones[rno] = resposta
@@ -77,7 +47,44 @@ document.getElementById("op1").innerHTML=opciones[0]
 document.getElementById("op2").innerHTML=opciones[1]
 document.getElementById("op3").innerHTML=opciones[2]
 document.getElementById("op4").innerHTML=opciones[3]
-} //fin del else 1
+}
+function jugar(){
+document.getElementById("acertosp").innerHTML=bem
+document.getElementById("errosp").innerHTML=mal
+if ((bem + mal) == 26){
+var acertou = (bem*100)/26;
+acertou = Math.round(acertou);
+alert("você acertou " + acertou + "%")
+$("#qual, #ul, #res, #ja").hide();
+//$("#boton").attr("value", "Jogar de novo");
+$("#boton").slideDown();
+document.getElementById("muito").innerHTML=" "
+document.getElementById("resposta").innerHTML=" "
+//document.getElementById("boton").value="Jogar de novo"
+resposta = ''
+resjugador = ''
+randest = ''
+opciones = []
+bem = 0
+mal = 0
+jugados = []
+ }
+else if ((bem + mal) == 0 ){
+$("#boton").slideUp(300, function(){
+$("#acertos, #erros, #qual").show();
+$("ul").hide();
+$("ul").css("visibility","visible");
+$("ul").slideDown(500);
+});
+gpregunta();
+generar();
+generar2();
+}
+else {
+gpregunta();
+generar()
+generar2();
+}
 } // fin de jugar
 function analizar(elemento) {
 resjugador = elemento.innerHTML;
@@ -89,8 +96,11 @@ else {
 document.getElementById("muito").innerHTML="Muito Mal!!!"
 mal += 1
 }
-document.getElementById("res").style.visibility="visible";
+$("#res, #ja").show();
 document.getElementById("resposta").innerHTML=resposta;
-document.getElementById("ja").style.visibility="visible";
 jugar();
 }
+$(document).ready(function(){
+$("#boton, #mapa, footer, #acertos, #erros, #qual, #res, #ja").hide();
+$("#boton, #mapa, footer").fadeIn(1500)
+});
