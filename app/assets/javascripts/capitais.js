@@ -103,5 +103,7 @@ jugar();
 }
 $(document).ready(function(){
 $("#boton, #mapa, footer, #acertos, #erros, #qual, #res, #ja").hide();
+$("#mapa").load(function(){
 $("#boton, #mapa, footer").fadeIn(1500)
+});
 });
