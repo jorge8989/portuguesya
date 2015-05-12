@@ -85,3 +85,7 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+#cronoli {
+	background: #fff;
+	color: black;
+}
