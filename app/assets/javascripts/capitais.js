@@ -8,22 +8,29 @@ var bem = 0
 var mal = 0
 var jugados = []
 var crono = 5;
+var time;
 //funciones del cronometro
 function quitar(){
-$("#crono").delay(1000).hide(0, function(){
+time = setTimeout(function(){
+$("#crono").hide();
 crono -=1;
-mostrar()
-});
+if (crono == 0){
+analizar();	
+}
+else{
+mostrar();
+}
+}, 1000);
 }
 function mostrar(){
-if (crono > 0){
+if (crono >0){
 $("#crono").html(crono);
 $("#crono").show();
-quitar();	
+quitar();
 }
-else if (crono == 0) {
-analizar();
 }
+function stoptimer(){
+clearTimeout(time);	
 }
 //-----------------------------
 function gpregunta() {
@@ -87,6 +94,7 @@ bem = 0
 mal = 0
 jugados = []
 crono = 0
+stoptimer();
  }
 else if ((bem + mal) == 0 ){
 $("#boton").slideUp(600, function(){
@@ -108,6 +116,7 @@ else {
 gpregunta();
 generar()
 generar2();
+stoptimer();
 crono = 5
 mostrar();
 }
