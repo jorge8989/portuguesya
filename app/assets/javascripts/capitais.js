@@ -7,6 +7,25 @@ var opciones = []
 var bem = 0
 var mal = 0
 var jugados = []
+var crono = 5;
+//funciones del cronometro
+function quitar(){
+$("#crono").delay(1000).hide(0, function(){
+crono -=1;
+mostrar()
+});
+}
+function mostrar(){
+if (crono > 0){
+$("#crono").html(crono);
+$("#crono").show();
+quitar();	
+}
+else if (crono == 0) {
+analizar();
+}
+}
+//-----------------------------
 function gpregunta() {
 var rne = Math.round(Math.random()*25);
 randest = estados[rne];
@@ -49,9 +68,9 @@ document.getElementById("op3").innerHTML=opciones[2]
 document.getElementById("op4").innerHTML=opciones[3]
 }
 function jugar(){
-document.getElementById("acertosp").innerHTML=bem
-document.getElementById("errosp").innerHTML=mal
-if ((bem + mal) == 26){
+$("#acertosp").html(bem)
+$("#errosp").html(mal)
+if ((bem + mal) == 26){ //PROBANDO
 var acertou = (bem*100)/26;
 acertou = Math.round(acertou);
 alert("você acertou " + acertou + "%")
@@ -59,9 +78,7 @@ $("#qual, #ul, #res, #ja").hide();
 //$("#boton").attr("value", "Jogar de novo");
 $("#boton").attr("value", "Jogar de novo");
 $("#boton").fadeIn(1000);
-document.getElementById("muito").innerHTML=" "
-document.getElementById("resposta").innerHTML=" "
-//document.getElementById("boton").value="Jogar de novo"
+$("#muito, #resposta").html(" ")
 resposta = ''
 resjugador = ''
 randest = ''
@@ -69,13 +86,19 @@ opciones = []
 bem = 0
 mal = 0
 jugados = []
+crono = 0
  }
 else if ((bem + mal) == 0 ){
 $("#boton").slideUp(600, function(){
 $("#acertos, #erros, #qual").show();
 $("ul").hide();
 $("ul").css("visibility","visible");
-$("ul").slideDown(1000);
+crono = 5	
+$("#crono").html(crono);
+$("ul").slideDown(1000, function(){
+crono = 5	
+mostrar();
+});
 });
 gpregunta();
 generar();
@@ -85,10 +108,20 @@ else {
 gpregunta();
 generar()
 generar2();
+crono = 5
+mostrar();
 }
 } // fin de jugar
 function analizar(elemento) {
+function creares() {	
+if (crono == 0) {resjugador = "mal"}
+else {	
 resjugador = elemento.innerHTML;
+}
+}
+creares();
+//$("#crono").hide();
+//crono = 5;
 if (resjugador == resposta) {
 document.getElementById("muito").innerHTML="Muito Bem!!!"
 bem += 1
@@ -104,6 +137,6 @@ jugar();
 $(document).ready(function(){
 $("#boton, #mapa, footer, #acertos, #erros, #qual, #res, #ja").hide();
 $("#mapa").load(function(){
-$("#boton, #mapa, footer").fadeIn(1500)
+$("#boton, #mapa, footer").fadeIn(1500);
 });
 });
