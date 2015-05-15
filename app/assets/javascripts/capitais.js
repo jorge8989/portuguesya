@@ -24,13 +24,13 @@ if (anlo == resposta) {
 $("li:eq("+o+")").animate({
 "font-size": "100%"	
 }, 400, function(){
-if ((bem + mal) > 0 && (bem + mal) < 3){
+if ((bem + mal) > 0 && (bem + mal) < 26){
 gpregunta();
 generar()
 generar2();
 crono = 5
 mostrar()}
-else if ((bem + mal) == 3)	{
+else if ((bem + mal) == 26)	{
 var acertou = (bem*100)/26;
 acertou = Math.round(acertou);
 alert("você acertou " + acertou + "%")
