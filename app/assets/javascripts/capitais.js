@@ -157,6 +157,7 @@ jugar();
 }
 $(document).ready(function(){
 $("#boton, #mapa, footer, #acertos, #erros, #qual").hide();
+if($("#Brasil").html() == "Brasil"){$("footer").show()};
 $("#mapa").load(function(){
 $("#boton, #mapa, footer").fadeIn(1500);
 });
