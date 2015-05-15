@@ -37,12 +37,14 @@ footer {
 	padding-bottom: 10px;
 }
 #acertosp {
+	font-size: 150%;
 	color: #04B404;
 }
 #errosp {
+	font-size: 150%;
 	color: #B40404;
 }
-#qual, #res, #acertos, #ja, #erros {
+#qual, #acertos, #erros {
 	font-weight: normal;
 }
 #boton {
@@ -88,4 +90,8 @@ a:hover {
 #cronoli {
 	background: #fff;
 	color: black;
+}
+#crono {
+	font-size: 150%;
+	font-weight: normal;
 }

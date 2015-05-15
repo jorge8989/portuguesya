@@ -9,13 +9,56 @@ var mal = 0
 var jugados = []
 var crono = 5;
 var time;
-//funciones del cronometro
+var anli = "";
+function animar() {
+stoptimer();	
+for (var i = 0; i < 4; i++){
+anli = $("li:eq("+i+")").html();
+if (anli == resposta) {	
+$("li:eq("+i+")").animate({
+"font-size": "150%"	
+}, 400, function(){
+for (var o = 0; o < 4; o++){
+anlo = $("li:eq("+o+")").html();
+if (anlo == resposta) {		
+$("li:eq("+o+")").animate({
+"font-size": "100%"	
+}, 400, function(){
+if ((bem + mal) > 0 && (bem + mal) < 3){
+gpregunta();
+generar()
+generar2();
+crono = 5
+mostrar()}
+else if ((bem + mal) == 3)	{
+var acertou = (bem*100)/26;
+acertou = Math.round(acertou);
+alert("você acertou " + acertou + "%")
+$("#qual, #ul").hide();
+$("#boton").attr("value", "Jogar de novo");
+resposta = ''
+resjugador = ''
+randest = ''
+opciones = []
+bem = 0
+mal = 0
+jugados = []
+crono = 0
+$("#boton").fadeIn(1000)
+}
+});//fin del segundo animate
+}}
+});//fin del primer animate
+}}}	
+//funciones del cronometro--------------
 function quitar(){
 time = setTimeout(function(){
 $("#crono").hide();
 crono -=1;
 if (crono == 0){
-analizar();	
+analizar();
+$("#crono").html(crono);
+$("#crono").show();	
 }
 else{
 mostrar();
@@ -23,7 +66,7 @@ mostrar();
 }, 1000);
 }
 function mostrar(){
-if (crono >0){
+if (crono > 0){
 $("#crono").html(crono);
 $("#crono").show();
 quitar();
@@ -43,8 +86,6 @@ resposta = capitais[rne];
 }
 document.getElementById("pregunta").innerHTML=randest;
 jugados.push(randest);
-//alert(jugados);
-
 }
 function generar(){
 var op1 = Math.round(Math.random()*25);
@@ -77,26 +118,7 @@ document.getElementById("op4").innerHTML=opciones[3]
 function jugar(){
 $("#acertosp").html(bem)
 $("#errosp").html(mal)
-if ((bem + mal) == 26){ //PROBANDO
-var acertou = (bem*100)/26;
-acertou = Math.round(acertou);
-alert("você acertou " + acertou + "%")
-$("#qual, #ul, #res, #ja").hide();
-//$("#boton").attr("value", "Jogar de novo");
-$("#boton").attr("value", "Jogar de novo");
-$("#boton").fadeIn(1000);
-$("#muito, #resposta").html(" ")
-resposta = ''
-resjugador = ''
-randest = ''
-opciones = []
-bem = 0
-mal = 0
-jugados = []
-crono = 0
-stoptimer();
- }
-else if ((bem + mal) == 0 ){
+if ((bem + mal) == 0 ){
 $("#boton").slideUp(600, function(){
 $("#acertos, #erros, #qual").show();
 $("ul").hide();
@@ -113,14 +135,8 @@ generar();
 generar2();
 }
 else {
-gpregunta();
-generar()
-generar2();
-stoptimer();
-crono = 5
-mostrar();
-}
-} // fin de jugar
+animar();
+}} // fin de jugar
 function analizar(elemento) {
 function creares() {	
 if (crono == 0) {resjugador = "mal"}
@@ -132,19 +148,15 @@ creares();
 //$("#crono").hide();
 //crono = 5;
 if (resjugador == resposta) {
-document.getElementById("muito").innerHTML="Muito Bem!!!"
 bem += 1
 }
 else {
-document.getElementById("muito").innerHTML="Muito Mal!!!"
 mal += 1
 }
-$("#res, #ja").show();
-document.getElementById("resposta").innerHTML=resposta;
 jugar();
 }
 $(document).ready(function(){
-$("#boton, #mapa, footer, #acertos, #erros, #qual, #res, #ja").hide();
+$("#boton, #mapa, footer, #acertos, #erros, #qual").hide();
 $("#mapa").load(function(){
 $("#boton, #mapa, footer").fadeIn(1500);
 });
