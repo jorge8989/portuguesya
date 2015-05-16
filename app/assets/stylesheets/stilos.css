@@ -48,6 +48,7 @@ footer {
 }
 #qual, #acertos, #erros {
 	font-weight: normal;
+	visibility: hidden;
 }
 #boton {
 	font-size: 110%;

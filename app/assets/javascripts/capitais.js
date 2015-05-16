@@ -1,5 +1,5 @@
-var estados = ['do Rio grande do sul', 'de Santa Catarina', 'do Paraná', 'do São Paulo', 'do Rio de janeiro', 'do Espírito Santo', 'de Minas gerais', 'de Goias', 'do Mato grosso', 'do Mato Grosso do sul', 'de Rondônia', 'do Acre', 'de Amazonas', 'do Pará', 'de Roraima', 'de Amapá', 'de Tocantins', 'do Piauí', 'do Maranhão', 'do Ceará', 'do Rio grande do norte', 'da Paraiba', 'de Alagoas', 'de Pernambuco', 'de Sergipe', 'da Bahia']
-var capitais = ['Porto alegre', 'Florianópolis', 'Curitiba', 'São Paulo', 'Rio de janeiro', 'Vitória', 'Belo horizonte', 'Goiánia', 'Cuiabá', 'Campo grande', 'Porto velho', 'Rio branco', 'Manaus', 'Belém', 'Boa vista', 'Macapá', 'Palmas', 'Teresina', 'São Luis', 'Fortaleza', 'Natal', 'João Pessoa', 'Maceió', 'Recife', 'Aracaju', 'Salvador' ];
+var estados = ['do Rio Grande do Sul', 'de Santa Catarina', 'do Paraná', 'do São Paulo', 'do Rio de Janeiro', 'do Espírito Santo', 'de Minas Gerais', 'de Goias', 'do Mato Grosso', 'do Mato Grosso do Sul', 'de Rondônia', 'do Acre', 'de Amazonas', 'do Pará', 'de Roraima', 'de Amapá', 'de Tocantins', 'do Piauí', 'do Maranhão', 'do Ceará', 'do Rio Grande do Norte', 'da Paraiba', 'de Alagoas', 'de Pernambuco', 'de Sergipe', 'da Bahia']
+var capitais = ['Porto Alegre', 'Florianópolis', 'Curitiba', 'São Paulo', 'Rio de Janeiro', 'Vitória', 'Belo Horizonte', 'Goiânia', 'Cuiabá', 'Campo Grande', 'Porto Velho', 'Rio Branco', 'Manaus', 'Belém', 'Boa vista', 'Macapá', 'Palmas', 'Teresina', 'São Luis', 'Fortaleza', 'Natal', 'João Pessoa', 'Maceió', 'Recife', 'Aracaju', 'Salvador' ];
 var resposta = ''
 var resjugador = ''
 var randest = ''
@@ -10,6 +10,16 @@ var jugados = []
 var crono = 5;
 var time;
 var anli = "";
+function reiniciar() {
+resposta = ''
+resjugador = ''
+randest = ''
+opciones = []
+bem = 0
+mal = 0
+jugados = []
+crono = 0
+}
 function animar() {
 stoptimer();	
 for (var i = 0; i < 4; i++){
@@ -24,26 +34,20 @@ if (anlo == resposta) {
 $("li:eq("+o+")").animate({
 "font-size": "100%"	
 }, 400, function(){
-if ((bem + mal) > 0 && (bem + mal) < 26){
+if ((bem + mal) > 0 && (bem + mal) < 26){ //probando
 gpregunta();
 generar()
 generar2();
 crono = 5
 mostrar()}
-else if ((bem + mal) == 26)	{
+else if ((bem + mal) == 26)	{ //probando
 var acertou = (bem*100)/26;
 acertou = Math.round(acertou);
-alert("você acertou " + acertou + "%")
-$("#qual, #ul").hide();
+
+$("#qual, #ul").css("visibility", "hidden");
 $("#boton").attr("value", "Jogar de novo");
-resposta = ''
-resjugador = ''
-randest = ''
-opciones = []
-bem = 0
-mal = 0
-jugados = []
-crono = 0
+alert("você acertou " + acertou + "%")
+reiniciar();
 $("#boton").fadeIn(1000)
 }
 });//fin del segundo animate
@@ -118,6 +122,7 @@ document.getElementById("op4").innerHTML=opciones[3]
 function jugar(){
 $("#acertosp").html(bem)
 $("#errosp").html(mal)
+$("#qual, #acertos, #erros").css("visibility", "visible");
 if ((bem + mal) == 0 ){
 $("#boton").slideUp(600, function(){
 $("#acertos, #erros, #qual").show();

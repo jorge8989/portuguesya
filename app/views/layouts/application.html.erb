@@ -12,7 +12,8 @@
 <%= yield %>	
 </div>
 <footer>
-<%= link_to "Capitais e estados", eec_eec_path %>	
+<%= link_to "Início", root_path, onClick: "reiniciar()" %>	
+<%= link_to "Estados e capitais", eec_eec_path, onClick: "reiniciar()" %>	
 </footer>
 </body>
 </html>
