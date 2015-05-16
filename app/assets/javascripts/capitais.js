@@ -161,7 +161,7 @@ mal += 1
 jugar();
 }
 $(document).ready(function(){
-$("#boton, #mapa, footer, #acertos, #erros, #qual").hide();
+$("#boton, #mapa, footer").hide();
 if($("#Brasil").html() == "Brasil"){$("footer").show()};
 $("#mapa").load(function(){
 $("#boton, #mapa, footer").fadeIn(1500);
