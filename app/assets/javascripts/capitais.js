@@ -46,9 +46,9 @@ acertou = Math.round(acertou);
 
 $("#qual, #ul").css("visibility", "hidden");
 $("#boton").attr("value", "Jogar de novo");
-alert("você acertou " + acertou + "%")
 reiniciar();
-$("#boton").fadeIn(1000)
+alert("você acertou " + acertou + "%")
+$("#boton").show();
 }
 });//fin del segundo animate
 }}
