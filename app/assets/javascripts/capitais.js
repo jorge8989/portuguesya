@@ -160,7 +160,7 @@ mal += 1
 }
 jugar();
 }
-$(document).ready(function(){
+$(document).ready(function(){	
 $("#boton, #mapa, footer").hide();
 if($("#Brasil").html() == "Brasil"){$("footer").show()};
 $("#mapa").load(function(){
