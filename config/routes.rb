@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'ja/index'
+
+  get 'licoes/index'
+  get 'capitais/index'
   get 'eec/eec'
 
   # The priority is based upon order of creation: first created -> highest priority.

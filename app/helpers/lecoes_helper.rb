@@ -1,0 +1,2 @@
+module LecoesHelper
+end

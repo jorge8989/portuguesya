@@ -23,15 +23,15 @@ crono = 0
 function animar() {
 stoptimer();	
 for (var i = 0; i < 4; i++){
-anli = $("li:eq("+i+")").html();
+anli = $(".li:eq("+i+")").html();
 if (anli == resposta) {	
-$("li:eq("+i+")").animate({
+$(".li:eq("+i+")").animate({
 "font-size": "150%"	
 }, 400, function(){
 for (var o = 0; o < 4; o++){
-anlo = $("li:eq("+o+")").html();
+anlo = $(".li:eq("+o+")").html();
 if (anlo == resposta) {		
-$("li:eq("+o+")").animate({
+$(".li:eq("+o+")").animate({
 "font-size": "100%"	
 }, 400, function(){
 if ((bem + mal) > 0 && (bem + mal) < 26){ //probando
@@ -126,11 +126,11 @@ $("#qual, #acertos, #erros").css("visibility", "visible");
 if ((bem + mal) == 0 ){
 $("#boton").slideUp(600, function(){
 $("#acertos, #erros, #qual").show();
-$("ul").hide();
-$("ul").css("visibility","visible");
+$("#ul").hide();
+$("#ul").css("visibility","visible");
 crono = 5	
 $("#crono").html(crono);
-$("ul").slideDown(1000, function(){
+$("#ul").slideDown(1000, function(){
 crono = 5	
 mostrar();
 });
@@ -160,10 +160,11 @@ mal += 1
 }
 jugar();
 }
-$(document).ready(function(){	
-$("#boton, #mapa, footer").hide();
-if($("#Brasil").html() == "Brasil"){$("footer").show()};
-$("#mapa").load(function(){
-$("#boton, #mapa, footer").fadeIn(1500);
+$(document).ready(function(){		
+$(".fadin").hide();
+if($("#benvindo").html() != "Ben-vindo"){$(".fadin").show()};
+$("#tucan").load(function(){
+$(".fadin").fadeIn(1500);
 });
+
 });

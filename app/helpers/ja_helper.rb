@@ -1,0 +1,2 @@
+module JaHelper
+end

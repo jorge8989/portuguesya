@@ -1,0 +1,57 @@
+#mapa {
+	width: 40%;
+	height: 40%;
+}
+#acertosp {
+	font-size: 150%;
+	color: #04B404;
+}
+#errosp {
+	font-size: 150%;
+	color: #B40404;
+}
+#qual, #acertos, #erros {
+	font-weight: normal;
+	visibility: hidden;
+}
+#boton {
+	font-size: 110%;
+	padding: 10px 20px;
+	background: #088A29;
+	border: none;
+	color: #fff;
+	font-family: "Comic Sans MS", Arial, Helvetica, Sans-serif ;
+	width: 30%;
+	
+}
+#boton:hover {
+	background: #04B431;
+	cursor: pointer;
+}
+
+#ul {
+	list-style: none;
+}
+.li {
+	font-size: 110%;
+	padding: 10px 20px;
+	background: #0080FF;
+	width: 30%;
+	margin: 1% auto;
+	color: #fff;
+}
+#ul {
+visibility: hidden;
+}
+.li:hover {
+	background: #045FB4;
+	cursor: pointer;
+}
+#cronoli {
+	background: #fff;
+	color: black;
+}
+#crono {
+	font-size: 150%;
+	font-weight: normal;
+}

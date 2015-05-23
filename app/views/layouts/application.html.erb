@@ -2,27 +2,40 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Capitais do Brasil</title>
+  <title>PortuguesYa!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3&appId=1451345068509956";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>	
+<header>
+	<div class="contenedor">
+<div class="logo">
+	<img class="fadin" id="tucan" src="/images/tucan.jpg">	
+	<h1 id="tituloprincipal">PortuguesYa!</h1>	
+</div>
+<nav class="menu">
+<ul>
+	<li><%= link_to "Início", root_path, onClick: "reiniciar()", title: "Página de início", :class => "headlinks" %></li>
+	<li><%= link_to "Jogos e Aplicativos", ja_index_path, title: "Jogos e aplicativos didáticos", :class => "headlinks" %></li>
+	<li><%= link_to "Lições", licoes_index_path, onClick: "reiniciar()", title: "Lições de Português", :class => "headlinks" %>	</li>
+</ul>
+</nav>
+</div>
+</header>	
+<!--<div id="fb-root"></div>like button!-->
 <div id="caja">
 <%= yield %>	
 </div>
 <footer>
-<%= link_to "Início", root_path, onClick: "reiniciar()", title: "Página de início" %>	
-<%= link_to "Estados e capitais", eec_eec_path, onClick: "reiniciar()", title: "Todos os estados do Brasil e suas capitais" %>	
-<div class="fb-like" data-href="http://capitais.herokuapp.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+	<h1>PÁGINA EN CONSTRUCCIÓN</h1>
+	<p>blablablablablablablablablablabla<br>
+blablablablablablablablablablabla<br>
+blablablablablablablablablablabla<br>
+blablablablablablablablablablabla<br>
+blablablablablablablablablablabla<br>
+blablablablablablablablablablabla<br></p>
 </footer>
+<!--<div class="fb-like" data-href="http://capitais.herokuapp.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>likebutton!-->
 </body>
 </html>
