@@ -25,7 +25,7 @@ development:
   <<: *default
   database: capitais_development
   username: JORGE
-  password: 011102ruby
+  password: #REPLACE WITH PASSWORD
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -81,4 +81,4 @@ production:
   <<: *default
   database: Capitais_production
   username: JORGE
-  password: 011102ruby
+  password: #REPLACE WITH PASSWORD
